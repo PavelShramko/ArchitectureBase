@@ -30,8 +30,12 @@ class MVPView : Fragment(), MVPContract.IView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Логично ли то, что я вынес это в отдельную функцию?
+        showPost()
 
+    }
 
+    override fun showPost() {
         binding?.mainRV?.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = mainAdapter
